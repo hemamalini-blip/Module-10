@@ -1,44 +1,37 @@
-# Queue-Remove Two String Values from the Rear End in Python 🧵
+# Stack Implementation Using `LifoQueue` (Max Size 7) 🔄
 
-This Python program demonstrates how to manage a list of strings and remove the last two elements (i.e., from the rear of the list).
+This Python program demonstrates a stack implemented using the `LifoQueue` class from the `queue` module. It allows up to 7 elements, checks if the stack is full, and then prints the elements in reverse (LIFO) order.
 
 ## 🎯 Aim
 
-To write a Python program to:
-- Accept `n` string values from the user
-- Remove the last two values (rear end of the list)
-- Display the updated list
+To create a Python program that:
+- Implements a stack using `LifoQueue` with a maximum size of 7
+- Adds user-inputted values to the stack
+- Checks whether the stack is full
+- Prints the stack elements in reverse order (LIFO)
 
-## 🧠 Algorithm
+## 📋 Algorithm
 
-1. Create an empty list `q`.
-2. Read an integer `n` from the user (number of strings).
-3. Loop `n` times:
-   - Read a string input.
-   - Append it to the list `q`.
-4. Remove the last element using `pop()`.
-5. Remove the next last element using `pop()` again.
-6. Display the updated list.
+1. Import the `LifoQueue` class from the `queue` module.
+2. Create a stack with a maximum size of 7.
+3. Read the number of elements (`n`) to be added to the stack.
+4. Loop `n` times:
+   - Read a value from the user.
+   - Use `put()` to push it onto the stack if it's not full.
+5. Use `full()` to check if the stack is full and print the result.
+6. Use `get()` repeatedly to pop and print elements in reverse order.
 
-##  Program:
-from collections import deque<br>
-q = deque()<br>
-n=int(input())<br>
+## Program
+from queue import LifoQueue<br>
+stack = LifoQueue(maxsize=5)<br>
+n= int(input())<br>
 for i in range(n):<br>
-    q.append(input())<br>
-for i in range(2):<br>
-    q.popleft()<br>
-print(q)<br>
-q = deque()<br>
-n=int(input())<br>
+    stack.put(input())<br>
+print(stack.full())<br>
 for i in range(n):<br>
-    q.append(input())<br>
-for i in range(2):<br>
-    q.popleft()<br>
-print(q)
-
-### Output:
-<img width="1088" height="387" alt="image" src="https://github.com/user-attachments/assets/ed99b6eb-bbe2-460f-a9e9-7350f70413b7" />
+    print(stack.get())<br>
+## 🧪 Sample Input and Output
+<img width="359" height="416" alt="image" src="https://github.com/user-attachments/assets/a68fc4b7-ca97-4217-bd8a-09868a824755" />
 
 ## Result:
 Thus the output is verified.
